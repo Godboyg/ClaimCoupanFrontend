@@ -12,7 +12,7 @@ export default function App() {
 
   const checkClaimStatus = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/api/coupons/status");
+      const response = await axios.get("api/coupons/status");
       console.log("response",response);
       setStatus(response.data);
     } catch (error) {
@@ -23,7 +23,7 @@ export default function App() {
   const claimCoupon = async () => {
     setLoading(true);
     try {
-      const response = await axios.get("http://localhost:5000/api/coupons/claim");
+      const response = await axios.get("api/coupons/claim");
       console.log("coupan response",response);
       setCoupon(response.data.code);
       checkClaimStatus();
